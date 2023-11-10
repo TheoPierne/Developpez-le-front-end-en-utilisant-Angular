@@ -20,6 +20,17 @@ export class DetailsComponent implements OnInit {
         pointStart: 0
       }
     },
+    xAxis: {
+      tickInterval: 1,
+      title: {
+        text: 'Dates',
+      }
+    },
+    yAxis: {
+      title: {
+        text: ''
+      }
+    },
     series: [
       {
         name: '🥇',
@@ -45,13 +56,13 @@ export class DetailsComponent implements OnInit {
           this.countryDetails = countryDetails;
           this.numberOfMedals = countryDetails.participations.reduce((prev, participation) => participation.medalsCount + prev, 0);
           this.numberOfAthletes = countryDetails.participations.reduce((prev, participation) => participation.athleteCount + prev, 0);
-          console.log(this.countryDetails);
 
           if (this.chartOptions.series) {
             this.chartOptions.series[0] = {
               name: '🥇',
               data: countryDetails.participations.map(participation => participation.medalsCount),
               type: 'line',
+              showInLegend: false,
             } as Highcharts.SeriesLineOptions;
           }
 
