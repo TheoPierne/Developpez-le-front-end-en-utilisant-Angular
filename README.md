@@ -1,29 +1,37 @@
-# OlympicGamesStarter
+# Olympic Games App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
 
-Don't forget to install your node_modules before starting (`npm install`).
+## Getting Started
 
-## Development server
+- Minimum NodeJS version: v14.15.0
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Install dependencies with
+```sh
+npm install
+```
+
+Start the server with `npm start`, it will open `http://localhost:4200/` in your current/favorite browser.
+
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Where to start
+## Architecture of the project
 
-As you can see, an architecture has already been defined for the project. It is just a suggestion, you can choose to use your own. The predefined architecture includes (in addition to the default angular architecture) the following:
-
-- `components` folder: contains every reusable components
-- `pages` folder: contains components used for routing
-- `core` folder: contains the business logic (`services` and `models` folders)
-
-I suggest you to start by understanding this starter code. Pay an extra attention to the `app-routing.module.ts` and the `olympic.service.ts`.
-
-Once mastered, you should continue by creating the typescript interfaces inside the `models` folder. As you can see I already created two files corresponding to the data included inside the `olympic.json`. With your interfaces, improve the code by replacing every `any` by the corresponding interface.
-
-You're now ready to implement the requested features.
-
-Good luck!
+```sh
+src
+├───app 
+│   ├───core 
+│   │   ├───models         # Contains the models of the data
+│   │   └───services       # Contains the services to handle the data
+│   └───pages
+│       ├───details        # Contains the details page where you can find details about a country that participated to the Olympic Games
+│       ├───home		   # Contains the home page where you can find a chart with all country that participated to Olympic Games
+│       └───not-found      # Contains the "not found page" that showed up when browsing for unknown page on the app
+├───assets
+│   ├───icons			   # Contains the icons for the app`
+│   └───mock   	   		   # Contains the data that be process on the app`
+└───environments           # Contains the environment variables for the project`
+```
